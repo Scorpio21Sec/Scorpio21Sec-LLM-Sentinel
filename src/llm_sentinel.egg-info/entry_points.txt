@@ -1,0 +1,2 @@
+[console_scripts]
+llm-sentinel = llm_sentinel.cli:main
