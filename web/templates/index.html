@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LLM Sentinel | AI Security Scanner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="brand">
+        <span class="shield">🛡️</span>
+        <span>LLM Sentinel</span>
+    </div>
+
+    <div class="status">
+        <span class="status-dot"></span>
+        Scanner Online
+    </div>
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="badge">
+            AI SECURITY • LLM APPLICATION SECURITY
+        </div>
+
+        <h1>
+            Detect threats before<br>
+            <span>they reach your AI.</span>
+        </h1>
+
+        <p>
+            LLM Sentinel is a defensive security scanner for identifying
+            prompt injection, prompt extraction, secret exposure,
+            RAG poisoning and unsafe AI-agent behavior.
+        </p>
+
+    </section>
+
+
+    <section class="scanner-container">
+
+        <div class="scanner-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Security Scanner</h2>
+                    <p>Analyze untrusted LLM input for security indicators.</p>
+                </div>
+
+                <span class="api-status">LOCAL ENGINE</span>
+            </div>
+
+
+            <label for="inputText">
+                Input to analyze
+            </label>
+
+            <textarea
+                id="inputText"
+                placeholder="Paste an LLM prompt, user message, retrieved document, agent instruction, or other untrusted input here..."
+            ></textarea>
+
+
+            <div class="actions">
+
+                <button id="scanBtn" class="primary-btn">
+                    🔍 Scan for Threats
+                </button>
+
+                <button id="exampleBtn" class="secondary-btn">
+                    Load Example
+                </button>
+
+                <button id="clearBtn" class="secondary-btn">
+                    Clear
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="results-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Security Report</h2>
+                    <p>Results from the LLM Sentinel engine.</p>
+                </div>
+            </div>
+
+
+            <div id="emptyState" class="empty-state">
+
+                <div class="empty-icon">
+                    🛡️
+                </div>
+
+                <h3>Ready to scan</h3>
+
+                <p>
+                    Enter text above and run a security scan.
+                </p>
+
+            </div>
+
+
+            <div id="results" class="results hidden">
+
+                <div class="risk-summary">
+
+                    <div class="risk-box">
+                        <span>Risk Level</span>
+                        <strong id="riskLevel">INFO</strong>
+                    </div>
+
+                    <div class="risk-box">
+                        <span>Risk Score</span>
+                        <strong id="riskScore">0/100</strong>
+                    </div>
+
+                    <div class="risk-box">
+                        <span>Findings</span>
+                        <strong id="findingCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="findings-section">
+
+                    <h3>Findings</h3>
+
+                    <div id="findingsList"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💉</div>
+
+            <h3>Prompt Injection</h3>
+
+            <p>
+                Detect attempts to override trusted system,
+                developer or security instructions.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🔐</div>
+
+            <h3>Secret Exposure</h3>
+
+            <p>
+                Identify API keys, credentials and other
+                potentially sensitive information.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">📚</div>
+
+            <h3>RAG Security</h3>
+
+            <p>
+                Detect indicators associated with malicious
+                or poisoned retrieved content.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🤖</div>
+
+            <h3>Agent Security</h3>
+
+            <p>
+                Identify potentially unsafe instructions
+                involving tools and external actions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="portfolio">
+
+        <div class="portfolio-content">
+
+            <span class="badge">
+                AI SECURITY PORTFOLIO PROJECT
+            </span>
+
+            <h2>
+                Built for defensive<br>
+                <span>AI security engineering.</span>
+            </h2>
+
+            <p>
+                LLM Sentinel demonstrates practical security engineering
+                across LLM applications, including threat detection,
+                prompt security, RAG security and agent security.
+            </p>
+
+        </div>
+
+        <div class="architecture">
+
+            <div class="architecture-title">
+                SECURITY PIPELINE
+            </div>
+
+            <div class="pipeline">
+
+                <div>USER INPUT</div>
+
+                <span>→</span>
+
+                <div>SCANNER</div>
+
+                <span>→</span>
+
+                <div>RULE ENGINE</div>
+
+                <span>→</span>
+
+                <div>RISK REPORT</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        🛡️ LLM Sentinel
+    </div>
+
+    <div>
+        Defensive AI Security • Local Analysis
+    </div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
